@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_itel-S665L.mk
+    $(LOCAL_DIR)/twrp_S665L.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_itel-S665L-user \
-    omni_itel-S665L-userdebug \
-    omni_itel-S665L-eng
+    twrp_S665L-user \
+    twrp_S665L-userdebug \
+    twrp_S665L-eng
