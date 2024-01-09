@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/itel/itel-S665L
+DEVICE_PATH := device/itel/S665L
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
