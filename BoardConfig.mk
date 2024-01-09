@@ -12,18 +12,11 @@ ALLOW_MISSING_DEPENDENCIES := true
 
 # A/B
 AB_OTA_UPDATER := true
-AB_OTA_PARTITIONS += \
-    vbmeta \
-    vbmeta_system \
-    vbmeta_vendor \
-    dtbo \
-    boot \
-    system \
-    system \
-    system_ext \
-    vendor \
-    product \
-    vendor_dlkm
+# Recovery
+BOARD_HAS_LARGE_FILESYSTEM := true
+TARGET_NO_RECOVERY := true
+TW_HAS_NO_RECOVERY_PARTITION := true
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 BOARD_USES_RECOVERY_AS_BOOT := true
 
 # Architecture
@@ -111,8 +104,24 @@ PLATFORM_VERSION := 16.1.0
 
 # TWRP Configuration
 TW_THEME := portrait_hdpi
+TW_DEVICE_VERSION := Massatrio16
+RECOVERY_SDCARD_ON_DATA := true
+TARGET_USES_MKE2FS := true
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
+TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
+TW_DEFAULT_BRIGHTNESS := 1200
+TW_MAX_BRIGHTNESS := 2047
+TW_Y_OFFSET := 80
+TW_H_OFFSET := -80
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+TW_EXCLUDE_PYTHON := true
+TW_EXCLUDE_NANO := true
+TW_EXCLUDE_APEX := true
+TW_EXCLUDE_TWRPAPP := true
 TW_EXTRA_LANGUAGES := true
+TW_INCLUDE_NTFS_3G := true
+TW_NO_SCREEN_BLANK := true
 TW_SCREEN_BLANK_ON_BOOT := true
-TW_INPUT_BLACKLIST := "hbtp_vm"
-TW_USE_TOOLBOX := true
+TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
+TW_HAS_MTP := true
