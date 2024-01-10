@@ -1,2 +1,59 @@
 #add for board init.rc for recovery mode
 import /init.recovery.common.rc
+service mtk.plpath.utils.link /system/bin/mtk_plpath_utils
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
+
+
+service keystore2 /system/bin/keystore2 /tmp/misc/keystore
+    user root
+    group root drmrpc readproc log
+    disabled
+    seclabel u:r:recovery:s0
+
+service keymint-1-0 /vendor/bin/hw/android.hardware.security.keymint@1.0-unisoc.service
+    class early_hal
+    user root
+    group root drmrpc
+seclabel u:r:recovery:s0
+
+service gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service.trusty
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+    
+on property:vendor.sys.listener.registered=true
+    start keymint-1-0
+    start gatekeeper-1-0
+
+on property:hwservicemanager.ready=true
+   
+  
+    
+    start keymint-1-0
+    start gatekeeper-1-0
+
+on property:ro.crypto.state=unsupported
+ 
+    stop keymint-1-0
+    stop gatekeeper-1-0
+
+on property:ro.crypto.state=unencrypted
+    
+    stop keymint-1-0
+    stop gatekeeper-1-0
+
+on property:twrp.decrypt.done=true
+    
+    stop keymint-1-0
+    stop gatekeeper-1-0
+
+on boot
+start boot-hal-1-1
+    start health-hal-2-1
