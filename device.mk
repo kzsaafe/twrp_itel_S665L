@@ -27,14 +27,16 @@ PRODUCT_PACKAGES += \
     libhealthd.$(PRODUCT_PLATFORM)
 
 
+
+
 PRODUCT_PACKAGES += \
     bootctrl.ums9230
 
-PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-    bootctrl.ums9230 \
-    libgptutils \
-    libz \
-    libcutils
+
+PRODUCT_PACKAGES_DEBUG += \
+    update_engine_client
+PRODUCT_PACKAGES_DEBUG += \
+    bootctrl.mt6761
 
 PRODUCT_PACKAGES += \
     otapreopt_script \
