@@ -21,7 +21,7 @@ $(call inherit-product, device/itel/S665L/device.mk)
 
 
 PRODUCT_DEVICE := S665L
-PRODUCT_NAME := twrp_iS665L
+PRODUCT_NAME := twrp_S665L
 PRODUCT_BRAND := Itel
 PRODUCT_MODEL := itel S665L
 PRODUCT_MANUFACTURER := itel
