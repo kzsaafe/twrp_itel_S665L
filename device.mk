@@ -22,6 +22,12 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-service
 
 PRODUCT_PACKAGES += \
+    android.hardware.health@2.1-impl \
+    android.hardware.health@2.1-service \
+    libhealthd.$(PRODUCT_PLATFORM)
+
+
+PRODUCT_PACKAGES += \
     bootctrl.ums9230
 
 PRODUCT_STATIC_BOOT_CONTROL_HAL := \
@@ -46,7 +52,7 @@ AB_OTA_UPDATER := true
 
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := 31
-
+PRODUCT_SHIPPING_API_LEVEL := 31
 # A/B
 ENABLE_VIRTUAL_AB := true
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
