@@ -31,13 +31,14 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     bootctrl.ums9230
+ENABLE_VIRTUAL_AB := true
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
 
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
 PRODUCT_PACKAGES_DEBUG += \
-    bootctrl.mt6761
-
+    bootctrl.ums9230
 PRODUCT_PACKAGES += \
     otapreopt_script \
     cppreopts.sh \
