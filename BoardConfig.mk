@@ -171,4 +171,4 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_NO_FLASH_CURRENT_TWRP := true
 TARGET_USES_LOGD := true
 TWRP_INCLUDE_LOGCAT := true
-)/strace
+
