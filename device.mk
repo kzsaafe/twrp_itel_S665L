@@ -6,7 +6,7 @@
 #
 
 
-
+DEVICE_PATH := device/itel/S665L
 
 LOCAL_PATH := device/itel/S665L
 # A/B
@@ -56,8 +56,7 @@ AB_OTA_UPDATER := true
 PRODUCT_TARGET_VNDK_VERSION := 31
 PRODUCT_SHIPPING_API_LEVEL := 31
 # A/B
-ENABLE_VIRTUAL_AB := true
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+
 
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
